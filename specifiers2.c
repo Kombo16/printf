@@ -36,7 +36,7 @@ int print_unsigned(va_list types, char buffer[], int flags,
 }
 
 /**
- *print_octal - Function to print number in octal
+ *_print_octal - Function to print number in octal
  *@types: List of arguments
  *@buffer: a buffer of characters
  *@flags: Calculates active flags
@@ -47,7 +47,7 @@ int print_unsigned(va_list types, char buffer[], int flags,
  *
  */
 
-int print_octal(va_list types, char buffer[], int flags,
+int _print_octal(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
 	int i = BUFFER - 2;
@@ -76,7 +76,7 @@ int print_octal(va_list types, char buffer[], int flags,
 }
 
 /**
- *print_hexadecimal - Function that prints an unsigned
+ *_print_hexadecimal - Function that prints an unsigned
  *number in hexadecimal
  *@types: List of arguments
  *@buffer: buffer array
@@ -88,7 +88,7 @@ int print_octal(va_list types, char buffer[], int flags,
  *
  *
  */
-int print_hexadecimal(va_list types, char buffer[], int flags,
+int _print_hexadecimal(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
 	return (print_hexa(types, "0123456789abcdef", buffer,
@@ -96,7 +96,7 @@ int print_hexadecimal(va_list types, char buffer[], int flags,
 }
 
 /**
- *print_hexa_upper - Function that prints an unsigned
+ *_print_hex_upper - Function that prints an unsigned
  *number in upper hexadecimal
  *@types: List of arguments
  *@buffer: buffer array
@@ -107,7 +107,7 @@ int print_hexadecimal(va_list types, char buffer[], int flags,
  *Return: number of chars printed
  *
  */
-int print_hexa_upper(va_list types, char buffer[], int flags,
+int _print_hex_upper(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
 	return (print_hexa(types, "0123456789ABCDEF", buffer,

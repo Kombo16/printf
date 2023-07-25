@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *print_char - Function that prints a single char
+ *_print_char - Function that prints a single char
  *@types: List of arguments
  *@buffer: buffer array
  *@flags: calculates active flags
@@ -21,7 +21,7 @@ int _print_char(va_list types, char buffer[], int flags,
 }
 
 /**
- *print_string - Function that prints stirng of chars
+ *_print_string - Function that prints stirng of chars
  *@types: List of arguments
  *@buffer: buffer arrays
  *@flags: Calculates active flags
@@ -36,7 +36,7 @@ int _print_string(va_list types, char buffer[], int flags,
 {
 	int length = 0, i;
 	char *str = va_arg(types, char *);
-
+	
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
@@ -74,7 +74,7 @@ int _print_string(va_list types, char buffer[], int flags,
 }
 
 /**
- *print_percent - Function that prints the percent sign
+ *_print_percent - Function that prints the percent sign
  *@types: List of arguments
  *@buffer: buffer array
  *@flags: Calculates active flags
@@ -87,17 +87,18 @@ int _print_string(va_list types, char buffer[], int flags,
 int _print_percent(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
+	UNUSED(types);
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(precision);
-	UNUSED(width);
+	UNUSED(size);
 
 	return (write(1, "%%", 1));
 }
 
 /**
- *print_int - Function that deals with integers
+ *_print_int - Function that deals with integers
  *@types: List of arguments
  *@buffer: buffer array
  *@flags: calculates active flags
@@ -110,11 +111,6 @@ int _print_percent(va_list types, char buffer[], int flags,
 int _print_int(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(width);
 
 	int i = BUFFER - 2;
 	int is_negative = 0;
@@ -141,14 +137,14 @@ int _print_int(va_list types, char buffer[], int flags,
 }
 
 /**
- *print_binary - Function that prints number in binary
+ *_print_binary - Function that prints number in binary
  *@types: List of arguments
  *@buffer: buffer array
  *@flags: calculates active flags
  *@width: width
  *@precision: precision specifier
  *@size: size specifier
- *Return: numbdr of chars printed
+ *Return: number of chars printed
  *
  */
 

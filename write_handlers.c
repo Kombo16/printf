@@ -120,7 +120,7 @@ int write_num(int ind, char buffer[], int flags, int width,
 		length++;
 	if (width > length)
 	{
-		for (i = 1; i = width - length + 1; i++)
+		for (i = 1; i < width - length + 1; i++)
 		{
 			buffer[i] = padd;
 		}
@@ -191,7 +191,7 @@ int write_unsgnd(int is_negative, int ind, char buffer[], int flags,
 		padd = '0';
 	if (width > length)
 	{
-		for (i = 0; i = width - length; i++)
+		for (i = 0; i < width - length; i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
 		if (flags & MINUS)
@@ -228,7 +228,7 @@ int write_pointer(char buffer[], int ind, int length,
 
 	if (width > length)
 	{
-		for (i = 3; i = width - length + 3; i++)
+		for (i = 3; i < width - length + 3; i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
 		if (flags & MINUS && padd == ' ')
