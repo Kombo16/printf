@@ -43,7 +43,7 @@ int is_printable(char c)
  *
  * Return: 1 if c is a digit, 0 otherwise
  */
- nt is_digit(char c)
+ int is_digit(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -60,13 +60,13 @@ int is_printable(char c)
  */
 long int convert_size_number(long int num, int size)
 {
-	if (size == S_LONG)
+	if (size == LONG)
 		return (num);
-	else if (size == S_SHORT)
+	else if (size == SHORT)
 		return ((short)num);
 
 	return ((int)num);
-
+}
 
 /**
  * convert_size_unsgnd - Casts a number to the specified size
@@ -77,12 +77,9 @@ long int convert_size_number(long int num, int size)
  */
 long int convert_size_unsgnd(unsigned long int num, int size)
 {
-	if (size == S_LONG)
+	if (size == LONG)
 		return (num);
-	else if (size == S_SHORT)
+	else if (size == SHORT)
 		return ((unsigned short)num);
-
-	return ((unsigned int)num);
+	return ((unsigned int)num);
 }
-
-
