@@ -260,7 +260,7 @@ int write_pointer(char buffer[], int ind, int length,
 						length - (1 - padd_start) - 2));
 
 		}
-	}	
+	}
 	buffer[--ind] = 'x';
 	buffer[--ind] = '0';
 	if (extra_c)
