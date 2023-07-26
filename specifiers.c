@@ -36,7 +36,7 @@ int _print_string(va_list types, char buffer[], int flags,
 {
 	int length = 0, i;
 	char *str = va_arg(types, char *);
-	
+
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
