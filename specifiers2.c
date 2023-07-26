@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *print_unsigned - Function that prints an unsigned number
+ *_print_unsigned - Function that prints an unsigned number
  *@types: List of arguments
  *@buffer: a buffer of characters
  *@flags: Calculates active flags
@@ -12,7 +12,7 @@
  *
  */
 
-int print_unsigned(va_list types, char buffer[], int flags,
+int _print_unsigned(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
 	int i = BUFFER - 2;

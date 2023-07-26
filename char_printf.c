@@ -15,13 +15,13 @@ int is_printable(char c)
 }
 
 /**
- * append_hexa_code - Append ascci in hexadecimal code to buffer
- * @buffer: Array of chars.
- * @i: Index at which to start appending.
- * @ascii_code: ASSCI CODE.
- * Return: Always 3
+ *hexa_append_code - Append ascci in hexadecimal code to buffer
+ *@buffer: Array of chars.
+ *@i: Index at which to start appending.
+ *@ascii_code: ASSCI CODE.
+ *Return: Always 3
  */
-int append_hexa_code(char ascii_code, char buffer[], int i)
+int hexa_append_code(char ascii_code, char buffer[], int i)
 {
 	char map_to[] = "0123456789ABCDEF";
 	/* The hexa format code is always 2 digits long */
