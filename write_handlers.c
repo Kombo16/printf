@@ -65,12 +65,12 @@ int write_number(int is_negative, int ind, char buffer[], int flags,
 		int width, int precision, int size)
 {
 	int length = BUFFER - ind - 1;
-	char padd = ' ', extra_ch = '0';
+	char padd = ' ', extra_ch = 0;
 
 	UNUSED(size);
 
 	if ((flags & ZERO) && !(flags & MINUS))
-		extra_ch = '0';
+		padd  = '0';
 	if (is_negative)
 		extra_ch = '-';
 	else if (flags & PLUS)
@@ -113,8 +113,7 @@ int write_num(int ind, char buffer[], int flags, int width,
 	while (precision > length)
 	{
 		/*padding with 0 when precision is greater than length*/
-		buffer[--ind] = '0';
-		length++;
+		buffer[--ind] = '0', length++;
 	}
 	if (extra_c != 0)
 		length++;
@@ -148,7 +147,7 @@ int write_num(int ind, char buffer[], int flags, int width,
 				buffer[--padd_start] = extra_c;
 			return (write(1, &buffer[padd_start], i - padd_start) +
 					write(1, &buffer[ind],
-						length - (1 - padd_start)));
+		length - (1 - padd_start)));
 		}
 	}
 	if (extra_c)
@@ -228,7 +227,7 @@ int write_pointer(char buffer[], int ind, int length,
 
 	if (width > length)
 	{
-		for (i = 3; i < width - length + 3; i++)
+		for (i = 3; i < (width - length + 3); i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
 		if (flags & MINUS && padd == ' ')
